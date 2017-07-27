@@ -1,0 +1,38 @@
+/*注册页面样式*/
+
+.register-label {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    display: inline-block;
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+    color: #666;
+
+    -webkit-transition: All .5s;
+       -moz-transition: All .5s;
+         -o-transition: All .5s;
+        -ms-transition: All .5s;
+            transition: All .5s;
+    
+    -webkit-transform-origin: right;
+       -moz-transform-origin: right;
+        -ms-transform-origin: right;
+         -o-transform-origin: right;
+    
+}
+
+.validate-code-input {
+    padding-left: 0;
+}
+
+.validate-code-img {
+    height: 50px;
+    border: 1px solid #CCC;
+    padding: 5px;
+}
+
+.validate-code-img:hover {
+    cursor: pointer;
+}

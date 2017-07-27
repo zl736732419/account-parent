@@ -1,0 +1,28 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'Microsoft Yahei';
+}
+.form-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 50px;
+    color: #333;
+}
+
+.form-input {
+    background-color: rgba(0,0,0,.5);
+    border: 1px solid transparent;
+    color: white;
+}
+
+.row-item {
+    margin-top: 10px;
+}
+
+label.error{
+    top: 0;
+    line-height: 50px;
+}

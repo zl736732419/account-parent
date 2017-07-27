@@ -1,0 +1,30 @@
+.containBox {
+    background-color: transparent;
+}
+
+.validate-code-input {
+    padding-left: 0;
+}
+
+
+.validate-code-img {
+    height: 50px;
+    padding: 0;
+}
+
+.validate-code-img:hover {
+    cursor: pointer;
+}
+
+.form-header {
+    color: white;
+}
+
+.login-panel {
+    margin-top: 50px;
+}
+
+.register-tip {
+    margin-top: 10px;
+    text-align: right;
+}
