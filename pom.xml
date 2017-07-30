@@ -324,7 +324,7 @@
             </plugins>
         </pluginManagement>
     </build>
-    
+    <!--
     <repositories>
         <repository>
             <id>nexus</id>
@@ -338,8 +338,9 @@
             </snapshots>
         </repository>
     </repositories>
-    
+    -->
     <!--设置项目部署的仓库位置-->
+    <!--
     <distributionManagement>
         <repository>
             <id>nexus-releases</id>
@@ -352,5 +353,5 @@
             <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
-    
+    -->
 </project>
