@@ -296,11 +296,21 @@
                 <artifactId>jcaptcha-all</artifactId>
                 <version>1.0-RC6</version>
             </dependency>
-            
         </dependencies>
     </dependencyManagement>
 
     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <!--配置tag-->
+                    <tagBase>https://github.com/zl736732419/account-parent/tags</tagBase>
+                </configuration>
+            </plugin>
+        </plugins>
         <pluginManagement>
             <plugins>
                 <!-- 编译环境插件这里设置jdk环境1.8 -->
@@ -312,7 +322,6 @@
                         <source>${java.version}</source>
                     </configuration>
                 </plugin>
-                
                 <!--资源文件插件-->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -350,4 +359,12 @@
             <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+
+    <!--配置项目发布信息-->
+    <scm>
+        <connection>scm:git:https://github.com/zl736732419/account-parent.git</connection>
+        <developerConnection>scm:git:https://github.com/zl736732419/account-parent.git</developerConnection>
+        <!--master分支的浏览器地址，这里需要点击分支master-->
+        <url>https://github.com/zl736732419/account-parent/tree/master</url>
+    </scm>
 </project>
