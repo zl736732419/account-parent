@@ -16,6 +16,7 @@
     </modules>
     <name>account-parent Maven Parent</name>
 
+    
     <properties>
         <java.version>1.8</java.version>
         <mysql.version>5.1.39</mysql.version>
