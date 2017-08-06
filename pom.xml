@@ -320,6 +320,7 @@
                     <configuration>
                         <target>${java.version}</target>
                         <source>${java.version}</source>
+                        <encoding>UTF-8</encoding>
                     </configuration>
                 </plugin>
                 <!--资源文件插件-->
