@@ -5,7 +5,7 @@
     <groupId>com.zheng</groupId>
     <artifactId>account-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <modules>
         <module>account-commons</module>
         <module>account-thirdpart</module>
@@ -366,6 +366,6 @@
         <developerConnection>scm:git:https://github.com/zl736732419/account-parent.git</developerConnection>
         <!--master分支的浏览器地址，这里需要点击分支master-->
         <url>https://github.com/zl736732419/account-parent/tree/master</url>
-      <tag>1.1.1</tag>
+      <tag>HEAD</tag>
   </scm>
 </project>
