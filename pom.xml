@@ -5,7 +5,7 @@
     <groupId>com.zheng</groupId>
     <artifactId>account-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <modules>
         <module>account-commons</module>
         <module>account-thirdpart</module>
