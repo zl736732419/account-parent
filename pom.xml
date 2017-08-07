@@ -335,7 +335,7 @@
         </plugins>
     </build>
     <profiles>
-        <!--在项目发布时对构建进行签名-->
+        <!--在项目发布时对构建进行签名，这里是结合release使用-->
         <profile>
             <id>release-sign-artifacts</id>
             <activation>
