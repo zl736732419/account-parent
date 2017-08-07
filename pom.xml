@@ -301,15 +301,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
-                <configuration>
-                    <!--配置tag-->
-                    <tagBase>https://github.com/zl736732419/account-parent/tags</tagBase>
-                </configuration>
-            </plugin>
             <!-- 编译环境插件这里设置jdk环境1.8 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -326,6 +317,18 @@
                 <artifactId>maven-resources-plugin</artifactId>
                 <configuration>
                     <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!--版本发布插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <!--配置tag，用于版本发布，mvn release:prepare,rollback,perform-->
+                    <tagBase>https://github.com/zl736732419/account-parent/tags</tagBase>
+                    <!--用于切换分支，修复bug mvn release:brunch-->
+                    <branchBase>https://github.com/zl736732419/account-parent/branches</branchBase>
                 </configuration>
             </plugin>
         </plugins>
