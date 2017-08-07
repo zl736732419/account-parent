@@ -327,7 +327,7 @@
                 <configuration>
                     <!--配置tag，用于版本发布，mvn release:prepare,rollback,perform-->
                     <tagBase>https://github.com/zl736732419/account-parent/tags</tagBase>
-                    <!--用于切换分支，修复bug mvn release:brunch-->
+                    <!--用于切换分支，修复bug mvn release:branch-->
                     <branchBase>https://github.com/zl736732419/account-parent/branches</branchBase>
                 </configuration>
             </plugin>
