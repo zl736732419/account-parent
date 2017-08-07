@@ -329,10 +329,41 @@
                     <tagBase>https://github.com/zl736732419/account-parent/tags</tagBase>
                     <!--用于切换分支，修复bug mvn release:branch-->
                     <branchBase>https://github.com/zl736732419/account-parent/branches</branchBase>
+                    <mavenExecutorId>forked-path</mavenExecutorId>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <!--在项目发布时对构建进行签名-->
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
     <repositories>
         <repository>
             <id>nexus</id>
