@@ -165,9 +165,9 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
-                    <include>**/**.xml</include>
-                    <include>**/**.xsd</include>
-                    <include>**/**.properties</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.xsd</include>
+                    <include>**/*.properties</include>
                 </includes>
                 <filtering>true</filtering>
             </resource>

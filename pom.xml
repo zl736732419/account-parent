@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zheng</groupId>
@@ -126,7 +127,7 @@
             </dependency>
 
             <!-- ==================db================== -->
-            
+
             <!-- ==================ehcache===============-->
             <dependency>
                 <groupId>org.mybatis.caches</groupId>
@@ -138,10 +139,10 @@
                 <artifactId>ehcache-core</artifactId>
                 <version>${ehcache.core.version}</version>
             </dependency>
-            
+
             <!-- ==================ehcache===============-->
-            
-            
+
+
             <!-- ==================spring================== -->
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -214,7 +215,7 @@
                 <artifactId>aopalliance</artifactId>
                 <version>${aopalliance.version}</version>
             </dependency>
-            
+
             <!-- ==================spring================== -->
 
             <!--jstl-->
@@ -332,6 +333,16 @@
                     <mavenExecutorId>forked-path</mavenExecutorId>
                 </configuration>
             </plugin>
+            <!--项目报告-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.6</version>
+                <!--<configuration>-->
+                    <!--<locales>zh_CN</locales>-->
+                <!--</configuration>-->
+            </plugin>
+
         </plugins>
     </build>
     <profiles>
@@ -389,6 +400,10 @@
             <name>Nexus Snapshot Repository</name>
             <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
+        <site>
+            <id>nexus-site</id>
+            <url>http://localhost:8081/nexus/content/repositories/sites/</url>
+        </site>
     </distributionManagement>
 
     <!--配置项目发布信息-->
@@ -397,6 +412,91 @@
         <developerConnection>scm:git:https://github.com/zl736732419/account-parent.git</developerConnection>
         <!--master分支的浏览器地址，这里需要点击分支master-->
         <url>https://github.com/zl736732419/account-parent/tree/master</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
+    <!--自定义报告，只包含依赖，团队，问题追踪，许可证-->
+    <reporting>
+        <plugins>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-project-info-reports-plugin</artifactId>-->
+                <!--<version>2.9</version>-->
+                <!--<reportSets>-->
+                    <!--<reportSet>-->
+                        <!--<reports>-->
+                            <!--<report>dependencies</report>-->
+                            <!--<report>project-team</report>-->
+                            <!--<report>issue-tracking</report>-->
+                            <!--<report>license</report>-->
+                        <!--</reports>-->
+                    <!--</reportSet>-->
+                <!--</reportSets>-->
+            <!--</plugin>-->
+            
+            <!--javadoc report-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+            </plugin>
+            
+            <!--网页浏览源代码-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <aggregate>true</aggregate>
+                </configuration>
+            </plugin>
+            
+            <!--checkstyle检查代码格式规范-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.10</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                </configuration>
+            </plugin>
+            
+            <!--pmdjava代码分析-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.8</version>
+                <configuration>
+                    <aggregate>true</aggregate>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-changelog-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <!--将报告最近60天的更变记录-->
+                    <type>range</type>
+                    <range>60</range>
+                </configuration>
+            </plugin>
+            <!--测试覆盖率-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+            </plugin>
+            
+        </plugins>
+    </reporting>
+    
+    <developers>
+        <developer>
+            <id>zl</id>
+            <name>zhenglian</name>
+            <email>736732419@qq.com</email>
+            <timezone>8</timezone>
+        </developer>
+    </developers>
+    
 </project>
